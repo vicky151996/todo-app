@@ -57,6 +57,10 @@ li:hover {
 li span {
   cursor: pointer;
 }
+li span {
+  flex: 1;
+  text-align: left;
+}
 
 li span.completed {
   text-decoration: line-through;
