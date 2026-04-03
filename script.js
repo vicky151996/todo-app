@@ -13,9 +13,10 @@ function renderTasks() {
 
     if (task.completed) {
       span.style.textDecoration = "line-through";
+      span.style.opacity = "0.6";
     }
 
-    // mark complete
+    // toggle complete
     span.onclick = function () {
       tasks[index].completed = !tasks[index].completed;
       saveTasks();
@@ -38,7 +39,7 @@ function renderTasks() {
 function addTask() {
   let input = document.getElementById("taskInput");
 
-  if (input.value === "") return;
+  if (input.value.trim() === "") return;
 
   tasks.push({
     text: input.value,
@@ -46,6 +47,8 @@ function addTask() {
   });
 
   input.value = "";
+  input.focus(); // UX improvement
+
   saveTasks();
 }
 
@@ -54,5 +57,12 @@ function saveTasks() {
   renderTasks();
 }
 
-// load tasks on page load
+// press Enter to add task
+document.getElementById("taskInput").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    addTask();
+  }
+});
+
+// initial load
 renderTasks();
