@@ -3,10 +3,15 @@ body {
   background: #0f172a;
   color: white;
   text-align: center;
+  margin: 0;
 }
 
 .container {
-  margin-top: 50px;
+  margin-top: 60px;
+}
+
+h1 {
+  color: #38bdf8;
 }
 
 input {
@@ -14,6 +19,7 @@ input {
   width: 220px;
   border-radius: 5px;
   border: none;
+  outline: none;
 }
 
 button {
@@ -23,38 +29,40 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  color: black;
+  font-weight: bold;
 }
 
-li {
-  margin: 10px;
-  list-style: none;
-}
-
-span {
-  margin-right: 10px;
-  cursor: pointer;
-}ul {
+ul {
   padding: 0;
+  margin-top: 20px;
 }
 
 li {
   background: #1e293b;
   margin: 10px auto;
   padding: 10px;
-  width: 250px;
+  width: 260px;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.3s;
+}
+
+li:hover {
+  background: #334155;
+}
+
+li span {
+  cursor: pointer;
 }
 
 li button {
   background: red;
   color: white;
   border: none;
-  padding: 5px;
+  padding: 5px 8px;
   border-radius: 5px;
   cursor: pointer;
-}li:hover {
-  background: #334155;
 }
