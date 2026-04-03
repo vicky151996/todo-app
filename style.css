@@ -33,4 +33,26 @@ li {
 span {
   margin-right: 10px;
   cursor: pointer;
+}ul {
+  padding: 0;
+}
+
+li {
+  background: #1e293b;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }
