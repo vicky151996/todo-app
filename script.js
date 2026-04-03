@@ -7,13 +7,11 @@ function renderTasks() {
   tasks.forEach((task, index) => {
     let li = document.createElement("li");
 
-    // task text
     let span = document.createElement("span");
     span.textContent = task.text;
 
     if (task.completed) {
-      span.style.textDecoration = "line-through";
-      span.style.opacity = "0.6";
+      span.classList.add("completed");
     }
 
     // toggle complete
@@ -47,7 +45,7 @@ function addTask() {
   });
 
   input.value = "";
-  input.focus(); // UX improvement
+  input.focus();
 
   saveTasks();
 }
@@ -57,12 +55,12 @@ function saveTasks() {
   renderTasks();
 }
 
-// press Enter to add task
+// press Enter key
 document.getElementById("taskInput").addEventListener("keypress", function(e) {
   if (e.key === "Enter") {
     addTask();
   }
 });
 
-// initial load
+// load tasks on start
 renderTasks();
